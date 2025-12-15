@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Apple-like Scrolling</title>
+    <meta name="description" content="Démo de défilement à la Apple: sections épinglées, animations douces, parallax léger." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="brand" href="#">MaMarque</a>
+        <ul class="links">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#sticky">Produit</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- HERO -->
+      <section id="hero" class="section hero">
+        <div class="container">
+          <h1 data-animate="fade-up">Un design soigné.</h1>
+          <p data-animate="fade-up" data-delay="0.08">Des interactions fluides. Inspiré par les meilleures expériences.</p>
+          <a class="btn" href="#sticky" data-animate="fade-up" data-delay="0.16">Découvrir</a>
+        </div>
+      </section>
+
+      <!-- SECTION STICKY TYPE "APPLE" -->
+      <section id="sticky" class="section sticky" aria-label="Présentation du produit">
+        <div class="panel">
+          <div class="stage">
+            <div class="device" aria-hidden="true">
+              <div class="device-frame">
+                <div class="device-screen"></div>
+              </div>
+            </div>
+            <div class="copy">
+              <h2 class="headline">Puissant. Élégant.</h2>
+              <p class="subhead">Une nouvelle façon de présenter votre produit.</p>
+            </div>
+          </div>
+
+          <div class="steps">
+            <div class="step" data-index="0">
+              <h3>Ultra net</h3>
+              <p>Des visuels haute définition qui prennent tout l’écran.</p>
+            </div>
+            <div class="step" data-index="1">
+              <h3>Réactif</h3>
+              <p>Des animations liées au scroll qui restent fluides.</p>
+            </div>
+            <div class="step" data-index="2">
+              <h3>Accessible</h3>
+              <p>Respect de <code>prefers-reduced-motion</code> et contrastes lisibles.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- GALERIE HORIZONTALE AVEC SCROLL-SNAP -->
+      <section id="galerie" class="section gallery" aria-label="Galerie">
+        <h2 data-animate="fade-up">Galerie</h2>
+        <div class="scroller" tabindex="0" aria-label="Galerie défilante">
+          <figure class="card"><div class="ph"></div><figcaption>Vue 1</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Vue 2</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Vue 3</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Vue 4</figcaption></figure>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta">
+        <div class="container">
+          <h2 data-animate="fade-up">Prêt à commencer ?</h2>
+          <a class="btn" href="#" data-animate="fade-up" data-delay="0.08">Acheter</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© 2025 MaMarque — Démo d’interactions façon Apple</small>
+    </footer>
+  </body>
+</html>
