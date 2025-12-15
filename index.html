@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Team_Up — Rencontres sportives</title>
     <meta name="description" content="Team_Up — Trouve ton/ta partenaire de sport près de toi, au bon niveau, au bon moment." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -14,11 +14,10 @@
   <body>
     <header class="site-header">
       <nav class="nav">
-        <a class="brand" href="#">Team_Up</a>
+        <a class="brand" href="./index.html">Team_Up</a>
         <ul class="links">
           <li><a href="#hero">Accueil</a></li>
           <li><a href="#fiches">Fiches</a></li>
-          <li><a href="#galerie">Galerie</a></li>
         </ul>
       </nav>
     </header>
@@ -26,227 +25,25 @@
     <main>
       <!-- HERO -->
       <section id="hero" class="section hero">
-        <div class="container">
+        <div class="container center">
           <h1 data-animate="fade-up">Trouve ton/ta partenaire de sport.</h1>
           <p data-animate="fade-up" data-delay="0.08">Des matchs près de toi, au bon niveau, au bon moment.</p>
           <a class="btn" href="#fiches" data-animate="fade-up" data-delay="0.16">Voir les fiches</a>
         </div>
       </section>
 
-      <!-- SECTION FICHES (sticky léger) -->
-      <section id="fiches" class="section sticky-fiches" aria-label="Navigation des fiches">
-        <div class="container">
-          <h2 class="center" data-animate="fade-up">Les 5 fiches du projet</h2>
-          <div class="chips" role="navigation" aria-label="Fiches">
-            <a class="chip is-active" href="#fiche-strategie" data-animate="fade-up" style="--i:0">Stratégie</a>
-            <a class="chip" href="#fiche-produit" data-animate="fade-up" style="--i:1">Produit</a>
-            <a class="chip" href="#fiche-prix" data-animate="fade-up" style="--i:2">Prix</a>
-            <a class="chip" href="#fiche-distribution" data-animate="fade-up" style="--i:3">Distribution</a>
-            <a class="chip" href="#fiche-publicite" data-animate="fade-up" style="--i:4">Publicité</a>
+      <!-- NAVIGATION VERS LES 5 FICHES (pages séparées) -->
+      <section id="fiches" class="section fiches-nav">
+        <div class="container center">
+          <h2 data-animate="fade-up">Les 5 fiches du projet</h2>
+          <p class="lead" data-animate="fade-up">Clique pour ouvrir la fiche dédiée dans la même page.</p>
+          <div class="chips">
+            <a class="chip" href="./fiches/strategie.html" data-animate="fade-up" style="--i:0">Stratégie</a>
+            <a class="chip" href="./fiches/produit.html" data-animate="fade-up" style="--i:1">Produit</a>
+            <a class="chip" href="./fiches/prix.html" data-animate="fade-up" style="--i:2">Prix</a>
+            <a class="chip" href="./fiches/distribution.html" data-animate="fade-up" style="--i:3">Distribution</a>
+            <a class="chip" href="./fiches/publicite.html" data-animate="fade-up" style="--i:4">Publicité</a>
           </div>
-          <p class="hint center">Clique sur une fiche pour aller à sa section dédiée.</p>
-        </div>
-      </section>
-
-      <!-- FICHE 1: STRATÉGIE -->
-      <section id="fiche-strategie" class="section fiche anchor-target" aria-label="Fiche Stratégie">
-        <div class="container">
-          <h2 data-animate="fade-up">Fiche Stratégie</h2>
-
-          <h3 data-animate="fade-up">TEAMUP — application qui connecte autour du sport</h3>
-          <p class="lead" data-animate="fade-up">Courir, jouer, s’entraîner, découvrir des partenaires dans sa région.</p>
-
-          <h3 data-animate="fade-up">SWOT</h3>
-          <div class="grid-2">
-            <div class="box" data-animate="fade-up">
-              <h4>Forces</h4>
-              <ul class="list">
-                <li>Concept innovant mêlant sport et lien social</li>
-                <li>Application mobile intuitive et géolocalisée</li>
-                <li>Partenariats possibles (salles, associations, marques)</li>
-                <li>Valeurs positives (santé, bien-être, convivialité)</li>
-              </ul>
-            </div>
-            <div class="box" data-animate="fade-up">
-              <h4>Faiblesses</h4>
-              <ul class="list">
-                <li>Difficulté à atteindre une masse critique au lancement</li>
-                <li>Dépendance à la motivation des utilisateurs</li>
-                <li>Coûts de développement et maintenance</li>
-                <li>Marché concurrentiel (Strava, Decathlon Coach, Meetup…)</li>
-              </ul>
-            </div>
-          </div>
-
-          <h3 data-animate="fade-up">Segmentation</h3>
-          <ul class="list" data-animate="fade-up">
-            <li><strong>Géographique:</strong> zones urbaines et périurbaines</li>
-            <li><strong>Démographique:</strong> tous âges; familles incluses</li>
-            <li><strong>Psychographique:</strong> sport sans pression de club, motivation sociale</li>
-            <li><strong>Comportementale:</strong> réguliers en groupe, débutants à motiver, publics sensibles à la sécurité</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Ciblage</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Personnes qui veulent se (re)mettre au sport sans contrainte</li>
-            <li>Sportifs réguliers cherchant des partenaires</li>
-            <li>Femmes et publics sensibles à la sécurité/motivation</li>
-            <li>Familles (via enfants) pour impliquer parents/grands-parents</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Positionnement & Valeurs</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Sport accessible, motivant et social, pour tous niveaux et âges</li>
-            <li><strong>Valeurs:</strong> Motivation, Accessibilité, Convivialité, Sécurité</li>
-          </ul>
-
-          <p class="back"><a href="#fiches">↑ Retour aux fiches</a></p>
-        </div>
-      </section>
-
-      <!-- FICHE 2: PRODUIT -->
-      <section id="fiche-produit" class="section fiche anchor-target" aria-label="Fiche Produit">
-        <div class="container">
-          <h2 data-animate="fade-up">Fiche Produit</h2>
-          <p class="lead" data-animate="fade-up"><strong>Nom:</strong> TeamUp — <em>Slogan:</em> « Monte ton équipe, bouge sans limite »</p>
-
-          <h3 data-animate="fade-up">Logo & couleurs</h3>
-          <div class="colors" data-animate="fade-up">
-            <div class="kv"><span class="dot" style="background:#2563EB"></span>Bleu électrique</div>
-            <div class="small">Confiance, technologie, énergie, esprit d’équipe</div>
-            <div class="kv"><span class="dot" style="background:#2DD4BF"></span>Vert menthe</div>
-            <div class="small">Vitalité, mouvement, bien-être, nature</div>
-            <div class="kv"><span class="dot" style="background:#ffffff"></span>Blanc</div>
-            <div class="small">Pureté, simplicité, lisibilité</div>
-            <div class="kv"><span class="dot" style="background:#0b0c0f"></span>Gris/Noir</div>
-            <div class="small">Modernité, contraste, professionnalisme</div>
-          </div>
-
-          <h3 data-animate="fade-up">Fonctionnalités principales</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Recherche & matching (sport, niveau, localisation)</li>
-            <li>Localiser les lieux sportifs</li>
-            <li>Messagerie intégrée</li>
-            <li>Groupes / Équipes locales</li>
-            <li>Statistiques d’activités / compatibilité sportive</li>
-          </ul>
-
-          <p class="back"><a href="#fiches">↑ Retour aux fiches</a></p>
-        </div>
-      </section>
-
-      <!-- FICHE 3: PRIX -->
-      <section id="fiche-prix" class="section fiche anchor-target" aria-label="Fiche Prix">
-        <div class="container">
-          <h2 data-animate="fade-up">Fiche Décisionnelle — Prix</h2>
-
-          <h3 data-animate="fade-up">Objectifs</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Acquérir rapidement une communauté active</li>
-            <li>Fidéliser via une valeur évolutive et motivante</li>
-            <li>Monétiser à moyen terme (Premium, B2B, récompenses)</li>
-            <li>Devenir la référence du sport communautaire</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Stratégie</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Gratuite au téléchargement (pénétration)</li>
-            <li>Monétisation: Premium, partenariats B2B, points & avantages</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Offres & prix</h3>
-          <ul class="list" data-animate="fade-up">
-            <li><strong>TeamUp Free</strong> — profil, recherche, défis publics, points — <strong>Gratuit</strong></li>
-            <li><strong>TeamUp Premium</strong> — coachs découverte, défis exclusifs, stats avancées, classement, perso, sans pubs — <strong>4,99 €/mois</strong> ou <strong>49,99 €/an</strong></li>
-            <li><strong>Partenaires (B2B)</strong> — interface clubs/associations/entreprises — <strong>Sur devis</strong></li>
-          </ul>
-
-          <h3 data-animate="fade-up">Système de points & avantages</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Points pour activités, défis, interactions</li>
-            <li>Réductions partenaires, événements exclusifs, bonus Premium</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Affichage & lancement</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Mise en avant du gratuit + récompenses</li>
-            <li>Clarté des bénéfices Premium</li>
-            <li><strong>Promo:</strong> 1 mois Premium offert aux 10 000 premiers</li>
-          </ul>
-
-          <p class="back"><a href="#fiches">↑ Retour aux fiches</a></p>
-        </div>
-      </section>
-
-      <!-- FICHE 4: DISTRIBUTION -->
-      <section id="fiche-distribution" class="section fiche anchor-target" aria-label="Fiche Distribution">
-        <div class="container">
-          <h2 data-animate="fade-up">Fiche Distribution</h2>
-
-          <h3 data-animate="fade-up">Canaux digitaux</h3>
-          <ul class="list" data-animate="fade-up">
-            <li><strong>App Stores:</strong> Apple App Store, Google Play Store</li>
-            <li><strong>Site web TeamUp:</strong> présentation, inscription, téléchargement, organismes & logos partenaires, blog santé/sport</li>
-            <li><strong>Réseaux sociaux:</strong> Instagram (classement hebdo), TikTok (récap d’événements), YouTube (tutos), LinkedIn (cible entreprises)</li>
-            <li><strong>Publicité en ligne:</strong> Google Ads géolocalisées (stades, pistes…), collaborations athlètes/coach</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Canaux physiques</h3>
-          <ul class="list" data-animate="fade-up">
-            <li><strong>Partenariats salles & clubs:</strong> affiches, QR codes, récompenses à l’inscription via ces liens</li>
-            <li><strong>Événements:</strong> marathons, tournois (foot, rugby, badminton, volley…), stands pour accompagner l’inscription</li>
-            <li><strong>Institutions publiques:</strong> mairies, écoles, universités, entreprises</li>
-          </ul>
-
-          <p class="back"><a href="#fiches">↑ Retour aux fiches</a></p>
-        </div>
-      </section>
-
-      <!-- FICHE 5: PUBLICITÉ -->
-      <section id="fiche-publicite" class="section fiche anchor-target" aria-label="Fiche Publicité">
-        <div class="container">
-          <h2 data-animate="fade-up">Fiche Publicité</h2>
-
-          <h3 data-animate="fade-up">Plan média</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Social organique & paid: Instagram, TikTok, YouTube (UGC, tutos, récap)</li>
-            <li>Search/Display: Google Ads géolocalisées (zones sportives)</li>
-            <li>Influence: collaborations athlètes/coach, formats “défis”</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Messages clés</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>« Monte ton équipe, bouge sans limite »</li>
-            <li>Sport accessible, motivant et social — en sécurité</li>
-            <li>Gagne des points, des défis, des récompenses</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Activations</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Lancement: 1 mois Premium offert aux 10 000 premiers</li>
-            <li>Défis locaux avec clubs/assos, classements hebdos</li>
-            <li>Parrainage, QR codes en salle/événements</li>
-          </ul>
-
-          <p class="back"><a href="#fiches">↑ Retour aux fiches</a></p>
-        </div>
-      </section>
-
-      <!-- GALERIE HORIZONTALE (facultatif) -->
-      <section id="galerie" class="section gallery" aria-label="Galerie">
-        <h2 data-animate="fade-up">Galerie</h2>
-        <div class="scroller" tabindex="0" aria-label="Galerie défilante">
-          <figure class="card"><div class="ph"></div><figcaption>Match près de chez toi</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Groupes & sessions</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Chat intégré</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Stats personnelles</figcaption></figure>
-        </div>
-      </section>
-
-      <section class="section cta">
-        <div class="container">
-          <h2 data-animate="fade-up">Prêt(e) à passer à l’action ?</h2>
-          <a class="btn" href="#" data-animate="fade-up" data-delay="0.08">Rejoindre Team_Up</a>
         </div>
       </section>
     </main>
