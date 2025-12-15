@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiche Produit — Team_Up</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body class="fiche">
+    <header class="fiche-header">
+      <div class="inner">
+        <a class="back-link" href="../index.html">← Retour à l’accueil</a>
+        <h1 class="fiche-title">Fiche Produit</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <p class="lead" data-animate="fade-up"><strong>Nom :</strong> TeamUp — <em>Slogan :</em> « Monte ton équipe, bouge sans limite »</p>
+
+          <h3 data-animate="fade-up">Logo & couleurs</h3>
+          <div class="colors" data-animate="fade-up">
+            <div class="kv"><span class="dot" style="background:#2563EB"></span>Bleu électrique</div>
+            <div class="small">Confiance, technologie, énergie, esprit d’équipe</div>
+            <div class="kv"><span class="dot" style="background:#2DD4BF"></span>Vert menthe</div>
+            <div class="small">Vitalité, mouvement, bien-être, nature</div>
+            <div class="kv"><span class="dot" style="background:#ffffff"></span>Blanc</div>
+            <div class="small">Pureté, simplicité, lisibilité</div>
+            <div class="kv"><span class="dot" style="background:#0b0c0f"></span>Gris/Noir</div>
+            <div class="small">Modernité, contraste, professionnalisme</div>
+          </div>
+
+          <h3 data-animate="fade-up">Fonctionnalités principales</h3>
+          <ul class="list" data-animate="fade-up">
+            <li>Recherche et matching sportif (sport, niveau, localisation)</li>
+            <li>Localiser les lieux sportifs</li>
+            <li>Messagerie intégrée</li>
+            <li>Groupes / Équipes locales</li>
+            <li>Statistiques d’activités / compatibilité sportive</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© 2025 Team_Up</small>
+    </footer>
+  </body>
+</html>
