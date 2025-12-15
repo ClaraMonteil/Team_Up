@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Team Up</title>
-    <meta name="description" content="Projet de marketing " />
+    <title>Team_Up — Rencontres sportives</title>
+    <meta name="description" content="Team_Up — Trouve ton/ta partenaire de sport près de toi au bon niveau, au bon moment." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
@@ -14,14 +14,11 @@
   <body>
     <header class="site-header">
       <nav class="nav">
-        <a class="brand" href="#">Team Up</a>
+        <a class="brand" href="#">Team_Up</a>
         <ul class="links">
           <li><a href="#hero">Accueil</a></li>
-          <li><a href="#sticky">Fiche Stratégie</a></li>
-          <li><a href="#sticky">Fiche Prix</a></li>
-          <li><a href="#sticky">Fiche Distribution</a></li>
-          <li><a href="#sticky">Fiche Publicité</a></li>
-          <li><a href="#galerie">Affiche</a></li>
+          <li><a href="#sticky">Comment ça marche</a></li>
+          <li><a href="#galerie">Galerie</a></li>
         </ul>
       </nav>
     </header>
@@ -30,66 +27,96 @@
       <!-- HERO -->
       <section id="hero" class="section hero">
         <div class="container">
-          <h1 data-animate="fade-up">Une application.</h1>
-          <p data-animate="fade-up" data-delay="0.08">Des centaines de sports.</p>
-          <a class="btn" href="#sticky" data-animate="fade-up" data-delay="0.16">Découvrir</a>
+          <h1 data-animate="fade-up">Trouve ton/ta partenaire de sport.</h1>
+          <p data-animate="fade-up" data-delay="0.08">Des matchs près de toi, au bon niveau, au bon moment.</p>
+          <a class="btn" href="#sticky" data-animate="fade-up" data-delay="0.16">Lancer Team_Up</a>
         </div>
       </section>
 
-      <!-- SECTION STICKY TYPE "APPLE" -->
-      <section id="sticky" class="section sticky" aria-label="Présentation du produit">
+      <!-- SECTION STICKY AVEC 5 FICHES -->
+      <section id="sticky" class="section sticky" aria-label="Comment ça marche">
         <div class="panel">
           <div class="stage">
+            <!-- Panneau visuel gauche -->
             <div class="device" aria-hidden="true">
               <div class="device-frame">
                 <div class="device-screen"></div>
               </div>
             </div>
-            <div class="copy">
-              <h2 class="headline">Puissant. Élégant.</h2>
-              <p class="subhead">Une nouvelle façon de présenter votre produit.</p>
+
+            <!-- Fiches qui se succèdent à droite -->
+            <div class="slides" aria-live="polite">
+              <article class="slide is-active">
+                <h2 class="headline">Découvre Team_Up</h2>
+                <p class="subhead">La manière la plus simple de jouer près de chez toi, quand tu veux.</p>
+              </article>
+              <article class="slide">
+                <h2 class="headline">Choisis ton sport</h2>
+                <p class="subhead">Foot, basket, tennis… indique ton niveau et tes envies.</p>
+              </article>
+              <article class="slide">
+                <h2 class="headline">Fixe tes dispos</h2>
+                <p class="subhead">Crée une session ou rejoins-en une en quelques secondes.</p>
+              </article>
+              <article class="slide">
+                <h2 class="headline">Match et rendez-vous</h2>
+                <p class="subhead">Matchez, discutez, retrouvez-vous au bon spot.</p>
+              </article>
+              <article class="slide">
+                <h2 class="headline">Jouez et recommencez</h2>
+                <p class="subhead">Notez la session, suivez vos stats, et bookez la suivante.</p>
+              </article>
             </div>
           </div>
 
-          <div class="steps">
-            <div class="step" data-index="0">
-              <h3>Ultra net</h3>
-              <p>Des visuels haute définition qui prennent tout l’écran.</p>
+          <!-- Navigation des fiches (synchro avec les slides) -->
+          <div class="steps" aria-label="Étapes">
+            <div class="step is-active" data-index="0">
+              <h3>Découvrir</h3>
+              <p>Pourquoi Team_Up</p>
             </div>
             <div class="step" data-index="1">
-              <h3>Réactif</h3>
-              <p>Des animations liées au scroll qui restent fluides.</p>
+              <h3>Sport</h3>
+              <p>Choix & niveau</p>
             </div>
             <div class="step" data-index="2">
-              <h3>Accessible</h3>
-              <p>Respect de <code>prefers-reduced-motion</code> et contrastes lisibles.</p>
+              <h3>Dispos</h3>
+              <p>Créer/Rejoindre</p>
+            </div>
+            <div class="step" data-index="3">
+              <h3>Match</h3>
+              <p>Chat & RDV</p>
+            </div>
+            <div class="step" data-index="4">
+              <h3>Jouer</h3>
+              <p>Notes & stats</p>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- GALERIE HORIZONTALE AVEC SCROLL-SNAP -->
+      <!-- GALERIE HORIZONTALE -->
       <section id="galerie" class="section gallery" aria-label="Galerie">
         <h2 data-animate="fade-up">Galerie</h2>
         <div class="scroller" tabindex="0" aria-label="Galerie défilante">
-          <figure class="card"><div class="ph"></div><figcaption>Vue 1</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Vue 2</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Vue 3</figcaption></figure>
-          <figure class="card"><div class="ph"></div><figcaption>Vue 4</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Match près de chez toi</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Groupes & sessions</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Chat intégré</figcaption></figure>
+          <figure class="card"><div class="ph"></div><figcaption>Stats personnelles</figcaption></figure>
         </div>
       </section>
 
       <!-- CTA -->
       <section class="section cta">
         <div class="container">
-          <h2 data-animate="fade-up">Prêt à commencer ?</h2>
-          <a class="btn" href="#" data-animate="fade-up" data-delay="0.08">Acheter</a>
+          <h2 data-animate="fade-up">Prêt(e) à passer à l’action ?</h2>
+          <a class="btn" href="#" data-animate="fade-up" data-delay="0.08">Rejoindre Team_Up</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <small>© 2025 Team UP — Clément Grandou, Manon Loubière, Clara Monteil et Amaury Rompillon</small>
+      <small>© 2025 Team_Up — Rencontres sportives</small>
     </footer>
   </body>
 </html>
