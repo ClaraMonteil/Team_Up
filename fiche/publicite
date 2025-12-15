@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fiche Publicité — Team_Up</title>
+    <link rel="stylesheet" href="../style.css" />
+    <script defer src="../script.js"></script>
+  </head>
+  <body class="fiche">
+    <header class="fiche-header">
+      <div class="inner">
+        <a class="back-link" href="../index.html">← Retour à l’accueil</a>
+        <h1 class="fiche-title">Fiche Publicité</h1>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h3 data-animate="fade-up">Plan média</h3>
+          <ul class="list" data-animate="fade-up">
+            <li>Social (organique + paid) : Instagram, TikTok, YouTube (UGC, tutos, récap d’événements)</li>
+            <li>Search/Display : Google Ads géolocalisées (zones sportives)</li>
+            <li>Influence : collaborations athlètes / coachs, formats “défis” sponsorisés</li>
+          </ul>
+
+          <h3 data-animate="fade-up">Messages clés</h3>
+          <ul class="list" data-animate="fade-up">
+            <li>« Monte ton équipe, bouge sans limite »</li>
+            <li>Sport accessible, motivant et social — en sécurité</li>
+            <li>Gagne des points, des défis, des récompenses</li>
+          </ul>
+
+          <h3 data-animate="fade-up">Activations</h3>
+          <ul class="list" data-animate="fade-up">
+            <li>Lancement : 1 mois Premium offert aux 10 000 premiers</li>
+            <li>Défis locaux avec clubs/assos, classements hebdomadaires</li>
+            <li>Parrainage, QR codes en salle/événements</li>
+          </ul>
+
+          <h3 data-animate="fade-up">KPIs</h3>
+          <ul class="list" data-animate="fade-up">
+            <li>CPA installation, taux inscription → session créée</li>
+            <li>Rétention D7/D30, conversion Premium</li>
+            <li>Part d’organismes partenaires et trafic local</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <small>© 2025 Team_Up</small>
+    </footer>
+  </body>
+</html>
