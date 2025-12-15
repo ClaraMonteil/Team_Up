@@ -1,9 +1,11 @@
 :root{
-  --bg: #0a0a0a;
-  --bg-soft:#0f0f10;
-  --text: #f5f5f7;
-  --muted:#b9bcc6;
-  --accent:#2997ff;
+  /* Thème sport bleu/vert */
+  --bg:#0b0c0f;
+  --bg-soft:#0f1014;
+  --text:#f5f5f7;
+  --muted:#9aa3b2;
+  --primary:#2dd4bf;   /* mint */
+  --accent:#2563eb;    /* blue */
   --radius:18px;
 }
 
@@ -36,14 +38,27 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .section { padding: 96px 20px; }
 .container { max-width: 1100px; margin: 0 auto; }
 
-.hero { min-height: 100svh; display: grid; place-items: center; text-align: center; background: radial-gradient(1200px 600px at 50% 10%, #111 0%, var(--bg) 60%); }
+/* HERO avec touche “kinétique” */
+.hero {
+  min-height: 100svh; display: grid; place-items: center; text-align: center;
+  background:
+    radial-gradient(1200px 600px at 50% 10%, #12131a 0%, var(--bg) 60%),
+    conic-gradient(
+      from 210deg at 50% 10%,
+      color-mix(in oklab, var(--primary) 30%, transparent) 0 25%,
+      transparent 25% 100%
+    );
+}
 .hero h1{ font-size: clamp(40px, 8vw, 80px); letter-spacing: -0.02em; margin: 0 0 12px; }
 .hero p{ font-size: clamp(16px, 2.2vw, 22px); color: var(--muted); margin: 0 0 24px; }
+
+/* Bouton en dégradé */
 .btn {
   display: inline-block; padding: 12px 22px; border-radius: 999px;
-  background: var(--text); color: #000; font-weight: 600;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color: #0b0c0f; font-weight: 700;
 }
-.btn:hover { filter: brightness(0.95); }
+.btn:hover { filter: brightness(1.03); }
 
 /* Sticky section façon Apple */
 .sticky { position: relative; padding: 0; height: 360vh; background: var(--bg-soft); }
@@ -52,9 +67,8 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   position: relative; width: min(1200px, 92vw); height: min(720px, 64vh);
   display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
 }
-.sticky .device {
-  perspective: 1200px;
-}
+.sticky .device { perspective: 1200px; }
+
 .device-frame {
   width: 100%; aspect-ratio: 9 / 16; border-radius: 44px;
   background: linear-gradient(180deg, #1a1b1f 0%, #0f1013 100%);
@@ -63,10 +77,12 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   opacity: calc(0.4 + var(--progress, 0) * 0.6);
   will-change: transform, opacity;
 }
+
+/* Écran teinté “primary/accent” */
 .device-screen {
   width: 100%; height: 100%; border-radius: 28px; background:
-    radial-gradient(300px 300px at 70% 20%, #3b82f6 0%, transparent 60%),
-    radial-gradient(300px 300px at 30% 80%, #22d3ee 0%, transparent 60%),
+    radial-gradient(300px 300px at 70% 20%, var(--accent) 0%, transparent 60%),
+    radial-gradient(300px 300px at 30% 80%, var(--primary) 0%, transparent 60%),
     #0b0c0f;
   border: 1px solid #2a2d36;
 }
@@ -74,15 +90,20 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .copy .headline { font-size: clamp(28px, 4vw, 48px); margin: 0 0 10px; }
 .copy .subhead { color: var(--muted); margin: 0; }
 
-/* Étapes textuelles qui deviennent actives avec le scroll (via JS) */
+/* Étapes textuelles (scroll) */
 .steps {
   position: absolute; inset: auto 0 32px 0; display: flex; gap: 18px; justify-content: center; opacity: .9;
 }
 .step {
-  background: #111318; border: 1px solid #1d2230; color: var(--muted);
-  padding: 12px 16px; border-radius: 12px; min-width: 220px; text-align: center; transition: transform .3s ease, color .3s ease, border-color .3s ease;
+  background: #111318; border: 1px solid #1e2535; color: var(--muted);
+  padding: 12px 16px; border-radius: 12px; min-width: 220px; text-align: center; transition: transform .3s ease, color .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-.step.is-active { color: var(--text); border-color: #2a6fff; transform: translateY(-6px); }
+.step.is-active {
+  color: var(--text);
+  border-color: var(--accent);
+  box-shadow: 0 6px 22px color-mix(in oklab, var(--accent) 18%, transparent);
+  transform: translateY(-6px);
+}
 
 /* Galerie horizontale scroll-snap */
 .gallery { background: var(--bg); }
@@ -92,7 +113,13 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   overflow-x: auto; gap: 16px; padding: 8px 8px 24px; scroll-snap-type: x mandatory;
 }
 .card { scroll-snap-align: center; background: #101114; border: 1px solid #1c1f29; border-radius: var(--radius); overflow: hidden; }
-.card .ph { height: 52svh; background: linear-gradient(120deg, #1a1b20, #121318); }
+.card .ph {
+  height: 52svh;
+  background:
+    radial-gradient(220px 220px at 20% 30%, color-mix(in oklab, var(--accent) 8%, #121318) 0%, transparent 60%),
+    radial-gradient(220px 220px at 80% 70%, color-mix(in oklab, var(--primary) 10%, #121318) 0%, transparent 60%),
+    linear-gradient(120deg, #1a1b20, #121318);
+}
 .card figcaption { padding: 12px 14px; color: var(--muted); }
 
 /* CTA */
@@ -112,3 +139,10 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 
 /* Pied de page */
 .site-footer { padding: 40px 20px; text-align: center; color: var(--muted); border-top: 1px solid #1b1b1f; }
+
+/* (Optionnel) Composants stats/badges si tu veux les utiliser plus tard */
+.badges{ display:flex; gap:12px; flex-wrap:wrap; }
+.badge{ background:#11151c; border:1px solid #1d2433; color:var(--muted); padding:8px 12px; border-radius:999px; font-weight:600; }
+.stat{ text-align:center; }
+.stat .num{ font-size: clamp(28px,4vw,44px); font-weight:800; background:linear-gradient(90deg,var(--primary),var(--accent)); -webkit-background-clip:text; color:transparent; }
+.stat .label{ color: var(--muted); }
