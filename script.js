@@ -11,60 +11,41 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('[data-animate]').forEach(el => io.observe(el));
 
-// “Pinning” Apple-like: calcule --progress (0 -> 1) pour chaque .section.sticky
-function setupStickyProgress() {
-  const sections = document.querySelectorAll('.section.sticky');
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+// Scrollspy: met en surbrillance la puce correspondant à la fiche visible
+function setupScrollSpy() {
+  const chips = Array.from(document.querySelectorAll('.chips .chip'));
+  const sections = chips.map(chip => {
+    const id = chip.getAttribute('href');
+    return document.querySelector(id);
+  }).filter(Boolean);
 
-  function update() {
-    for (const section of sections) {
-      const rect = section.getBoundingClientRect();
-      const vh = window.innerHeight || document.documentElement.clientHeight;
-
-      // Ratio de progression sur la section sticky
-      const totalScrollable = rect.height - vh;
-      const passed = Math.min(Math.max(-rect.top, 0), totalScrollable);
-      const progress = totalScrollable > 0 ? (passed / totalScrollable) : 0;
-
-      if (!reduceMotion) {
-        section.style.setProperty('--progress', progress.toFixed(4));
-      } else {
-        section.style.setProperty('--progress', '1');
-      }
-
-      // Étapes (petites cartes en bas)
-      const steps = section.querySelectorAll('.step');
-      if (steps.length) {
-        const activeIndex = Math.min(steps.length - 1, Math.floor(progress * steps.length));
-        steps.forEach((s, i) => s.classList.toggle('is-active', i === activeIndex));
-
-        // Slides (fiches à droite) synchronisées avec les steps
-        const slides = section.querySelectorAll('.slides .slide');
-        if (slides.length) {
-          slides.forEach((sl, i) => sl.classList.toggle('is-active', i === activeIndex));
-        }
+  // Observer chaque section fiche
+  const spy = new IntersectionObserver((entries) => {
+    // Trouver la section la plus visible
+    let mostVisible = null;
+    let maxRatio = 0;
+    for (const e of entries) {
+      if (e.intersectionRatio > maxRatio) {
+        maxRatio = e.intersectionRatio;
+        mostVisible = e.target;
       }
     }
-  }
+    if (!mostVisible) return;
 
-  let ticking = false;
-  function onScrollOrResize() {
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        update();
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }
+    // Activer la chip correspondante
+    const id = `#${mostVisible.id}`;
+    chips.forEach(chip => chip.classList.toggle('is-active', chip.getAttribute('href') === id));
+  }, { threshold: [0.2, 0.4, 0.6, 0.8] });
 
-  update();
-  window.addEventListener('scroll', onScrollOrResize, { passive: true });
-  window.addEventListener('resize', onScrollOrResize);
+  sections.forEach(sec => spy.observe(sec));
+
+  // Au clic, mise à jour immédiate de l'état actif
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+    });
+  });
 }
-setupStickyProgress();
 
-/*
-  Astuce: tu peux aussi utiliser des Scroll-Linked Animations CSS
-  (animation-timeline) en progressive enhancement pour la transition des slides.
-*/
+setupScrollSpy();
