@@ -1,114 +1,93 @@
 :root{
-  --bg: #0a0a0a;
-  --bg-soft:#0f0f10;
-  --text: #f5f5f7;
-  --muted:#b9bcc6;
-  --accent:#2997ff;
+  /* Thème sport “Apple” bleu électrique + vert menthe */
+  --bg:#0b0c0f;
+  --bg-soft:#0f1014;
+  --text:#f5f5f7;
+  --muted:#9aa3b2;
+  --primary:#2dd4bf;   /* menthe */
+  --accent:#2563eb;    /* bleu électrique */
   --radius:18px;
 }
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji", sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.5;
+/* ... garde le reste de ton CSS existant ... */
+
+/* NAV des fiches (petites bulles) */
+.fiches-nav { background: var(--bg-soft); }
+.fiches-nav .lead { color: var(--muted); }
+
+/* Grille responsive pour les bulles */
+.bubble-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 18px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 22px;
+  padding: 6px 0;
 }
 
-a { color: var(--accent); text-decoration: none; }
-a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+/* Bulle circulaire avec dégradé mint→blue et glow léger */
+.bubble{
+  --from: var(--primary);
+  --to: var(--accent);
 
-.site-header {
-  position: sticky; top: 0; z-index: 20;
-  background: color-mix(in oklab, var(--bg) 92%, black 8%);
-  border-bottom: 1px solid #1b1b1f;
-  backdrop-filter: blur(8px);
-}
-.nav { max-width: 1200px; margin: 0 auto; padding: 14px 20px; display: flex; align-items: center; gap: 24px; }
-.nav .brand { font-weight: 700; color: var(--text); letter-spacing: .2px; }
-.nav .links { display: flex; gap: 16px; list-style: none; margin: 0; padding: 0; }
-.nav .links a { color: var(--muted); }
-.nav .links a:hover { color: var(--text); }
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  color: #0b0c0f;              /* texte sombre sur bulle claire */
+  font-weight: 800;
+  letter-spacing: .2px;
 
-.section { padding: 96px 20px; }
-.container { max-width: 1100px; margin: 0 auto; }
+  /* Dégradé + léger motif radial façon Apple */
+  background:
+    radial-gradient(120px 120px at 30% 25%, color-mix(in oklab, var(--to) 16%, transparent) 0%, transparent 55%),
+    radial-gradient(120px 120px at 70% 75%, color-mix(in oklab, var(--from) 18%, transparent) 0%, transparent 55%),
+    linear-gradient(135deg, var(--from), var(--to));
 
-.hero { min-height: 100svh; display: grid; place-items: center; text-align: center; background: radial-gradient(1200px 600px at 50% 10%, #111 0%, var(--bg) 60%); }
-.hero h1{ font-size: clamp(40px, 8vw, 80px); letter-spacing: -0.02em; margin: 0 0 12px; }
-.hero p{ font-size: clamp(16px, 2.2vw, 22px); color: var(--muted); margin: 0 0 24px; }
-.btn {
-  display: inline-block; padding: 12px 22px; border-radius: 999px;
-  background: var(--text); color: #000; font-weight: 600;
-}
-.btn:hover { filter: brightness(0.95); }
+  border: 1px solid color-mix(in oklab, var(--to) 40%, black 60%);
+  box-shadow:
+    0 8px 28px color-mix(in oklab, var(--to) 26%, transparent),
+    inset 0 0 0 1px rgba(255,255,255,.12);
 
-/* Sticky section façon Apple */
-.sticky { position: relative; padding: 0; height: 360vh; background: var(--bg-soft); }
-.sticky .panel { position: sticky; top: 0; height: 100svh; display: grid; place-items: center; overflow: hidden; }
-.sticky .stage {
-  position: relative; width: min(1200px, 92vw); height: min(720px, 64vh);
-  display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: center;
-}
-.sticky .device {
-  perspective: 1200px;
-}
-.device-frame {
-  width: 100%; aspect-ratio: 9 / 16; border-radius: 44px;
-  background: linear-gradient(180deg, #1a1b1f 0%, #0f1013 100%);
-  border: 1px solid #1d1f25; padding: 14px; box-shadow: 0 20px 80px rgba(0,0,0,0.5);
-  transform: translateY(calc((1 - var(--progress, 0)) * 40px)) scale(calc(0.86 + var(--progress, 0) * 0.14)) rotateX(calc((1 - var(--progress, 0)) * 4deg));
-  opacity: calc(0.4 + var(--progress, 0) * 0.6);
-  will-change: transform, opacity;
-}
-.device-screen {
-  width: 100%; height: 100%; border-radius: 28px; background:
-    radial-gradient(300px 300px at 70% 20%, #3b82f6 0%, transparent 60%),
-    radial-gradient(300px 300px at 30% 80%, #22d3ee 0%, transparent 60%),
-    #0b0c0f;
-  border: 1px solid #2a2d36;
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
 }
 
-.copy .headline { font-size: clamp(28px, 4vw, 48px); margin: 0 0 10px; }
-.copy .subhead { color: var(--muted); margin: 0; }
-
-/* Étapes textuelles qui deviennent actives avec le scroll (via JS) */
-.steps {
-  position: absolute; inset: auto 0 32px 0; display: flex; gap: 18px; justify-content: center; opacity: .9;
-}
-.step {
-  background: #111318; border: 1px solid #1d2230; color: var(--muted);
-  padding: 12px 16px; border-radius: 12px; min-width: 220px; text-align: center; transition: transform .3s ease, color .3s ease, border-color .3s ease;
-}
-.step.is-active { color: var(--text); border-color: #2a6fff; transform: translateY(-6px); }
-
-/* Galerie horizontale scroll-snap */
-.gallery { background: var(--bg); }
-.gallery h2 { text-align: center; margin: 0 0 20px; }
-.scroller {
-  display: grid; grid-auto-flow: column; grid-auto-columns: 80%;
-  overflow-x: auto; gap: 16px; padding: 8px 8px 24px; scroll-snap-type: x mandatory;
-}
-.card { scroll-snap-align: center; background: #101114; border: 1px solid #1c1f29; border-radius: var(--radius); overflow: hidden; }
-.card .ph { height: 52svh; background: linear-gradient(120deg, #1a1b20, #121318); }
-.card figcaption { padding: 12px 14px; color: var(--muted); }
-
-/* CTA */
-.cta { text-align: center; background: linear-gradient(180deg, var(--bg-soft), var(--bg)); }
-
-/* Animations d’apparition légères */
-[data-animate] { opacity: 0; transform: translateY(14px); will-change: transform, opacity; }
-[data-animate].in { opacity: 1; transform: translateY(0); transition: opacity .6s ease, transform .6s ease; }
-[data-animate][data-delay] { transition-delay: calc(attr(data-delay number, 0) * 1s); }
-
-/* Accessibilité: réduire le mouvement */
-@media (prefers-reduced-motion: reduce){
-  html { scroll-behavior: auto; }
-  .device-frame { transform: none !important; opacity: 1 !important; }
-  [data-animate] { opacity: 1; transform: none; transition: none; }
+/* Label au centre de la bulle */
+.bubble .label{
+  display: block;
+  font-size: 0.95rem;
+  line-height: 1.1;
 }
 
-/* Pied de page */
-.site-footer { padding: 40px 20px; text-align: center; color: var(--muted); border-top: 1px solid #1b1b1f; }
+/* Hover/active états “Apple-like” */
+.bubble:hover{
+  transform: translateY(-4px) scale(1.03);
+  filter: brightness(1.06);
+  box-shadow:
+    0 12px 36px color-mix(in oklab, var(--to) 32%, transparent),
+    inset 0 0 0 1px rgba(255,255,255,.16);
+}
+.bubble:active{
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Focus visible accessible */
+.bubble:focus{
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Variante: bulles menthe ou bleu (si tu veux les alterner) */
+.bubble:nth-child(odd){ --from: var(--primary); --to: var(--accent); }
+.bubble:nth-child(even){ --from: var(--accent); --to: var(--primary); }
+
+/* Petits écrans: bulles un peu plus petites */
+@media (max-width: 400px){
+  .bubble{ width: 96px; height: 96px; }
+  .bubble .label{ font-size: 0.9rem; }
+}
