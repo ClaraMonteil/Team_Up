@@ -18,8 +18,9 @@
     <main>
       <section class="section">
         <div class="container">
-          <p class="lead" data-animate="fade-up"><strong>Nom :</strong> TeamUp — <em>Slogan :</em> « Monte ton équipe, bouge sans limite »</p>
+          <p class="lead" data-animate="fade-up"><strong>Nom:</strong> TeamUp — <em>Slogan:</em> « Monte ton équipe, bouge sans limite »</p>
 
+          <!-- À personnaliser -->
           <h3 data-animate="fade-up">Logo & couleurs</h3>
           <div class="colors" data-animate="fade-up">
             <div class="kv"><span class="dot" style="background:#2563EB"></span>Bleu électrique</div>
@@ -34,7 +35,7 @@
 
           <h3 data-animate="fade-up">Fonctionnalités principales</h3>
           <ul class="list" data-animate="fade-up">
-            <li>Recherche et matching sportif (sport, niveau, localisation)</li>
+            <li>Recherche & matching (sport, niveau, localisation)</li>
             <li>Localiser les lieux sportifs</li>
             <li>Messagerie intégrée</li>
             <li>Groupes / Équipes locales</li>
