@@ -19,50 +19,36 @@
       <section class="section">
         <div class="container">
           <h2 data-animate="fade-up">TEAMUP — connecter autour du sport</h2>
-          <p class="lead" data-animate="fade-up">Courir, jouer, s’entraîner, découvrir de nouveaux partenaires sportifs dans sa région.</p>
+          <p class="lead" data-animate="fade-up">Courir, jouer, s’entraîner, découvrir des partenaires dans sa région.</p>
 
+          <!-- À personnaliser -->
           <h3 data-animate="fade-up">SWOT</h3>
           <div class="grid-2">
             <div class="box" data-animate="fade-up">
               <h4>Forces</h4>
               <ul class="list">
-                <li>Concept innovant mêlant sport et lien social</li>
-                <li>Application mobile intuitive et géolocalisée</li>
-                <li>Partenariats possibles (salles de sport, associations, marques)</li>
-                <li>Valeurs positives (santé, bien-être, convivialité)</li>
+                <li>Concept sport + lien social</li>
+                <li>App intuitive & géolocalisée</li>
+                <li>Partenariats (salles, assos, marques)</li>
+                <li>Valeurs positives</li>
               </ul>
             </div>
             <div class="box" data-animate="fade-up">
               <h4>Faiblesses</h4>
               <ul class="list">
-                <li>Difficulté à atteindre une masse critique d’utilisateurs au lancement</li>
-                <li>Dépendance à la motivation des utilisateurs</li>
-                <li>Coût de développement et de maintenance élevé</li>
-                <li>Marché concurrentiel (Strava, Decathlon Coach, Meetup, etc.)</li>
+                <li>Masse critique au lancement</li>
+                <li>Dépendance à la motivation</li>
+                <li>Coûts de dev & maintenance</li>
+                <li>Marché concurrentiel</li>
               </ul>
             </div>
           </div>
 
-          <h3 data-animate="fade-up">Segmentation</h3>
+          <h3 data-animate="fade-up">Segmentation, Ciblage, Positionnement</h3>
           <ul class="list" data-animate="fade-up">
-            <li><strong>Géographique :</strong> zones urbaines et périurbaines</li>
-            <li><strong>Démographique :</strong> tous âges; familles incluses</li>
-            <li><strong>Psychographique :</strong> pratique sans pression de club, lien social</li>
-            <li><strong>Comportementale :</strong> réguliers en groupe; débutants à motiver; publics sensibles à la sécurité</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Ciblage</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Personnes voulant se (re)mettre au sport sans contrainte</li>
-            <li>Sportifs réguliers cherchant des partenaires</li>
-            <li>Femmes et autres publics sensibles à la sécurité et à la motivation</li>
-            <li>Familles (via les enfants) pour impliquer parents et grands-parents</li>
-          </ul>
-
-          <h3 data-animate="fade-up">Positionnement & Valeurs</h3>
-          <ul class="list" data-animate="fade-up">
-            <li>Application qui rend le sport accessible, motivant et social pour tous</li>
-            <li><strong>Valeurs :</strong> Motivation, Accessibilité, Convivialité, Sécurité</li>
+            <li>Zones urbaines/périurbaines, tous âges, familles</li>
+            <li>Sport sans pression de club, motivation sociale</li>
+            <li>Accessible, motivant, social; valeurs: Motivation, Accessibilité, Convivialité, Sécurité</li>
           </ul>
         </div>
       </section>
