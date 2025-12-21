@@ -34,7 +34,7 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 /* Header façon Apple (blur, léger contraste) */
 .site-header {
   position: sticky; top: 0; z-index: 20;
-  background: color-mix(in oklab, var(--bg) 92%, black 8%);
+  background: color-mix(in oklab, var(--bg) 72%, black 18%);
   border-bottom: 1px solid #1b1b1f;
   backdrop-filter: blur(8px);
 }
