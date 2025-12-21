@@ -207,11 +207,16 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .store-btn:hover{ filter: brightness(1.04); }
 
 /* Ajoute ceci à la fin de style.css */
-.hero h1{
-  display:inline-block;
-  position:relative;
-  padding: 6px 12px;
-  border-radius: 16px;
-  background: linear-gradient(135deg, rgba(45,212,191,0.10), rgba(37,99,235,0.10));
-  /* Pour un seul ton: remplace par rgba(45,212,191,0.12) OU rgba(37,99,235,0.12) */
+.hero{ position: relative; }
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  z-index:0;
+  background:
+    radial-gradient(70% 50% at 30% 25%, rgba(45,212,191,0.12) 0%, transparent 60%),
+    radial-gradient(60% 45% at 70% 60%, rgba(37,99,235,0.12) 0%, transparent 60%);
+  filter: blur(60px);
+  opacity: 1; /* ajuste entre 0.08 et 0.20 */
 }
+.hero .container{ position: relative; z-index:1; }
