@@ -4,9 +4,15 @@
   --bg-soft:#0f1014;
   --text:#f5f5f7;
   --muted:#9aa3b2;
-  --primary:#2dd4bf;   /* mint */
-  --accent:#2563eb;    /* blue */
+  --primary:#2dd4bf;   /* menthe */
+  --accent:#2563eb;    /* bleu électrique */
   --radius:18px;
+
+  /* Paramètres du fond “aurora” */
+  --glow-mint:#2dd4bf;
+  --glow-blue:#2563eb;
+  --glow-opacity:0.16; /* baisse/augmente pour ajuster l’intensité */
+  --glow-blur:60px;    /* augmente pour un rendu plus doux */
 }
 
 * { box-sizing: border-box; }
@@ -51,7 +57,7 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 .hero h1{ font-size: clamp(40px, 8vw, 80px); letter-spacing: -0.02em; margin: 0 0 12px; }
 .hero p{ font-size: clamp(16px, 2.2vw, 22px); color: var(--muted); margin: 0 0 24px; }
 
-/* CTA en dégradé mint→blue */
+/* CTA en dégradé menthe→bleu */
 .btn {
   display: inline-block; padding: 12px 22px; border-radius: 999px;
   background: linear-gradient(90deg, var(--primary), var(--accent));
@@ -74,7 +80,7 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 .chip:hover { color: var(--text); border-color: var(--accent); transform: translateY(-2px); }
 
-/* ====== Variante “bulle” pour les liens de fiches ====== */
+/* Variante “bulle” pour les liens de fiches */
 .chip.bubble{
   --from: var(--primary);   /* menthe */
   --to: var(--accent);      /* bleu */
@@ -186,7 +192,7 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
     radial-gradient(280px 280px at 70% 20%, var(--accent) 0%, transparent 60%),
     radial-gradient(280px 280px at 30% 80%, var(--primary) 0%, transparent 60%),
     #0b0c0f;
-  /* Ta capture d’écran sera superposée via style="background-image:url('...')" dans index.html */
+  /* Si tu mets une image via HTML: style="background-image:url('./assets/app-home.png')" */
   background-size: cover;
   background-position: center;
 }
@@ -200,21 +206,14 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   border: 1px solid #1e2535;
 }
 .store-btn:hover{ filter: brightness(1.04); }
-/* ===== Fond léger “aurora” menthe/bleu sur tout le site ===== */
-:root{
-  --glow-mint: #2dd4bf;
-  --glow-blue: #2563eb;
-  --glow-opacity: 0.16;   /* baisse/augmente pour ajuster l’intensité */
-  --glow-blur: 60px;      /* augmente pour un rendu plus doux */
-}
 
+/* ===== Fond léger “aurora” menthe/bleu sur tout le site ===== */
 body::before{
   content: "";
   position: fixed;
   inset: -10% -10%;
   pointer-events: none;
   z-index: 0; /* derrière tout */
-  /* versions avec color-mix (navigateurs modernes) */
   background:
     radial-gradient(60% 40% at 15% 20%, color-mix(in oklab, var(--glow-mint) 22%, transparent) 0%, transparent 60%),
     radial-gradient(50% 35% at 85% 10%, color-mix(in oklab, var(--glow-blue) 18%, transparent) 0%, transparent 55%),
@@ -223,7 +222,7 @@ body::before{
   opacity: var(--glow-opacity);
 }
 
-/* Fallback si color-mix n’est pas supporté (facultatif) */
+/* Fallback si color-mix n’est pas supporté */
 @supports not (background: color-mix(in oklab, white 10%, black 90%)){
   body::before{
     background:
