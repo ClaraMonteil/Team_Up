@@ -200,3 +200,46 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   border: 1px solid #1e2535;
 }
 .store-btn:hover{ filter: brightness(1.04); }
+/* ===== Fond léger “aurora” menthe/bleu sur tout le site ===== */
+:root{
+  --glow-mint: #2dd4bf;
+  --glow-blue: #2563eb;
+  --glow-opacity: 0.16;   /* baisse/augmente pour ajuster l’intensité */
+  --glow-blur: 60px;      /* augmente pour un rendu plus doux */
+}
+
+body::before{
+  content: "";
+  position: fixed;
+  inset: -10% -10%;
+  pointer-events: none;
+  z-index: 0; /* derrière tout */
+  /* versions avec color-mix (navigateurs modernes) */
+  background:
+    radial-gradient(60% 40% at 15% 20%, color-mix(in oklab, var(--glow-mint) 22%, transparent) 0%, transparent 60%),
+    radial-gradient(50% 35% at 85% 10%, color-mix(in oklab, var(--glow-blue) 18%, transparent) 0%, transparent 55%),
+    radial-gradient(50% 40% at 20% 80%, color-mix(in oklab, var(--glow-blue) 12%, transparent) 0%, transparent 55%);
+  filter: blur(var(--glow-blur));
+  opacity: var(--glow-opacity);
+}
+
+/* Fallback si color-mix n’est pas supporté (facultatif) */
+@supports not (background: color-mix(in oklab, white 10%, black 90%)){
+  body::before{
+    background:
+      radial-gradient(60% 40% at 15% 20%, rgba(45,212,191,0.22) 0%, transparent 60%),
+      radial-gradient(50% 35% at 85% 10%, rgba(37,99,235,0.18) 0%, transparent 55%),
+      radial-gradient(50% 40% at 20% 80%, rgba(37,99,235,0.12) 0%, transparent 55%);
+  }
+}
+
+/* Mobile: un peu plus discret */
+@media (max-width: 480px){
+  body::before{
+    opacity: 0.12;
+    filter: blur(72px);
+  }
+}
+
+/* Assure que le contenu est au-dessus de l’aurora */
+.site-header, main, footer{ position: relative; z-index: 1; }
