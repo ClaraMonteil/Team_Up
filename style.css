@@ -18,8 +18,8 @@ body {
   /* Fond légèrement coloré menthe/bleu */
   background:
     linear-gradient(180deg,
-      color-mix(in oklab, var(--bg) 90%, var(--primary) 10%),
-      color-mix(in oklab, var(--bg) 90%, var(--accent) 10%)
+      color-mix(in oklab, var(--bg) 10%, var(--primary) 10%),
+      color-mix(in oklab, var(--bg) 10%, var(--accent) 10%)
     );
   color: var(--text);
   line-height: 1.5;
