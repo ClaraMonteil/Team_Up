@@ -18,7 +18,7 @@
     <main>
       <section class="section">
         <div class="container">
-          <h2 data-animate="fade-up">TEAMUP — connecter autour du sport</h2>
+          <h2 data-animate="fade-up">TEAM UP — connecter autour du sport</h2>
           <p class="lead" data-animate="fade-up">Courir, jouer, s’entraîner, découvrir de nouveaux partenaires sportifs dans sa région.</p>
 
           <h3 data-animate="fade-up">SWOT</h3>
