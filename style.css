@@ -399,3 +399,23 @@ a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
   background: #000;
   outline: none;
 }
+/* ===== Cadre affiche (comme la vidéo) ===== */
+.poster-card{
+  margin: 24px auto 0;
+  width: min(760px, 92vw);          /* un peu moins large que la vidéo */
+  border-radius: 18px;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 20px 80px rgba(0,0,0,.45);
+  padding: 14px;
+}
+
+.poster-img{
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh;                 /* évite que ça prenne toute la page */
+  object-fit: contain;              /* garde tout visible, sans couper */
+  border-radius: 14px;
+  background: #000;
+}
