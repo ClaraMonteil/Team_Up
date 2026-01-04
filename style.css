@@ -1,13 +1,13 @@
-/* Styles pour les fiches */
+/* Styles pour l'en-tête des fiches */
 .fiche-header {
   position: sticky;
   top: 0;
   z-index: 20;
-  background: color-mix(in oklab, var(--bg) 90%, var(--bg-soft) 10%);
+  background: color-mix(in oklab, var(--bg) 92%, black 8%);
   padding: 16px 0;
-  border-bottom: 1px solid #1b1b1f;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre élégante */
+  border-bottom: 2px solid #2563eb; /* LIGNE BLEUE ÉLECTRIQUE POUR TESTER */
+  backdrop-filter: blur(8px); /* Effet flou */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Ombre subtile */
 }
 
 .fiche-header .inner {
@@ -17,6 +17,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  border: 1px dashed orange; /* LIGNE TEMPORAIRE POUR TESTER */
 }
 
 /* Style pour le lien "Retour à l’accueil" */
@@ -26,22 +27,22 @@
   color: var(--muted);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
+  border: 2px dashed red; /* LIGNE TEMPORAIRE POUR TESTER */
 }
 
 .back-link:hover {
-  color: var(--accent); /* Bleu électrique au survol */
-  transform: translateX(-4px); /* Déplacement subtil au survol */
+  color: var(--accent);
+  transform: translateX(-4px); /* Animation douce */
 }
 
 .back-link::before {
   content: "←"; /* Ajoute une flèche avant le texte */
-  margin-right: 0.5rem; /* Espacement avec le texte */
+  margin-right: 0.5rem;
   font-size: 1.2rem;
 }
 
 /* Style pour le titre de la fiche */
 .fiche-title {
-  flex-grow: 1; /* Permet au titre d’être centré */
   margin: 0;
   text-align: center;
   font-size: 1.8rem;
@@ -50,6 +51,7 @@
   background: linear-gradient(90deg, var(--primary), var(--accent));
   background-clip: text;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; /* Effet de texte dégradé */
+  -webkit-text-fill-color: transparent; /* Texte en dégradé */
   letter-spacing: 0.5px;
+  border: 2px dashed green; /* LIGNE TEMPORAIRE POUR TESTER */
 }
