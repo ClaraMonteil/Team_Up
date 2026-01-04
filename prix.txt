@@ -67,7 +67,7 @@
 
           <h3 data-animate="fade-up">8) Vision & évolution</h3>
           <ul class="list" data-animate="fade-up">
-            <li>Écosystème mondial du sport connecté (particuliers, marques, structures)</li>
+            <li>Déploiement d'un écosystème mondial du sport connecté (particuliers, marques, structures)</li>
             <li>Marché intégré de récompenses basé sur les points</li>
             <li>Adaptation des prix par pays et partenariats locaux</li>
           </ul>
