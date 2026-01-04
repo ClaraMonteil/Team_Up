@@ -18,7 +18,7 @@
     <main>
       <section class="section">
         <div class="container">
-          <p class="lead" data-animate="fade-up"><strong>Nom :</strong> TeamUp — <em>Slogan :</em> « Monte ton équipe, bouge sans limite »</p>
+          <p class="lead" data-animate="fade-up"><strong>Nom :</strong> Team Up — <em>Slogan :</em> « Monte ton équipe, bouge sans limite »</p>
 
           <h3 data-animate="fade-up">Logo & couleurs</h3>
           <div class="colors" data-animate="fade-up">
